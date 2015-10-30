@@ -1,0 +1,35 @@
+<template name="profile">
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">User profile</h1>
+  {{/contentFor}}
+  {{#contentFor "headerButtonRight"}}
+    <a href={{pathFor 'signin'}} class="button button-clear pull-right">
+      {{> ionIcon icon="log-out" }}
+    </a>
+  {{/contentFor}}
+  {{#ionView}}
+    {{#ionContent}}
+      {{#with card}}
+        {{#autoForm collection="Cards" doc=this id="updateCardForm"}}
+          <label class="item item-input">
+            {{> afQuickField name="username"}}
+          </label>
+          <label class="item item-input">
+            {{> afQuickField name="title"}}
+          </label>
+          <label class="item item-input">
+            {{> afQuickField name="summary" type="textarea"}}
+          </label>
+          <label class="item item-input">
+            {{> afQuickField name="phone"}}
+          </label>
+          <div class="padding">
+            <button type="submit" class="button button-block button-stable">
+              Update
+            </button>
+          </div>
+        {{/autoForm}}
+      {{/with}}
+    {{/ionContent}}
+  {{/ionView}}
+</template>

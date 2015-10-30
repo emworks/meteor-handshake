@@ -1,0 +1,18 @@
+<template name="saved">
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">Saved cards</h1>
+  {{/contentFor}}
+  {{#ionView}}
+    {{#ionContent}}
+      {{#ionList}}
+        {{#each cards}}
+          {{#ionItem path="user" buttonRight=true class="item-icon-right"}}
+            <h2>{{username}}</h2>
+            <p>{{title}}</p>
+            {{> ionIcon icon="ios-arrow-forward" class="dark"}}
+          {{/ionItem}}
+        {{/each}}
+      {{/ionList}}
+    {{/ionContent}}
+  {{/ionView}}
+</template>

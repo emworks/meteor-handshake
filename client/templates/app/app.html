@@ -1,0 +1,17 @@
+<template name="app">
+  {{#ionBody}}
+    {{#if currentUser}}
+      {{> ionNavBar class="bar-dark"}}
+    {{/if}}
+    {{#ionNavView}}
+      {{> yield}}
+    {{/ionNavView}}
+    {{#if currentUser}}
+      {{#ionTabs class="tabs-icon-top"}}
+        {{> ionTab title="All users" path="users" icon="search"}}
+        {{> ionTab title="Saved cards" path="saved" icon="star"}}
+        {{> ionTab title="Profile" path="profile" icon="person"}}
+      {{/ionTabs}}
+    {{/if}}
+  {{/ionBody}}
+</template>

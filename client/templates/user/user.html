@@ -1,0 +1,24 @@
+<template name="user">
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">User profile</h1>
+  {{/contentFor}}
+  {{#ionView}}
+    {{#ionContent class="padding"}}
+      {{#with card}}
+        <h2>{{username}}</h2>
+        <h3>{{title}}</h3>
+        <p>{{summary}}</p>
+        {{#if isPhoneShared}}
+          <p>{{phone}}</p>
+        {{/if}}
+        {{#unless isPhoneSent}}
+          <p>
+            <button id="send-phone" class="button button-block button-stable">
+              {{#if isPhoneShared}} Handshake! {{else}} Send phone {{/if}}
+            </button>
+          </p>
+        {{/unless}}
+      {{/with}}
+    {{/ionContent}}
+  {{/ionView}}
+</template>

@@ -1,0 +1,22 @@
+<template name="signin">
+  {{#ionView}}
+    {{#ionContent}}
+      {{#autoForm collection="Meteor.users" id="signinForm"}}
+        <label class="item item-input">
+          {{> afQuickField name="emails.0.address"}}
+        </label>
+        <label class="item item-input">
+          {{> afQuickField name="services.password" type="password"}}
+        </label>
+        <div class="padding">
+          <button type="submit" class="button button-block button-stable">
+            Sign in
+          </button>
+        </div>
+      {{/autoForm}}
+      <div class="padding">
+        <a href="{{pathFor 'join'}}">Join us</a>
+      </div>
+    {{/ionContent}}
+  {{/ionView}}
+</template>
