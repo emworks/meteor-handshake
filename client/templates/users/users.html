@@ -6,11 +6,13 @@
     {{#ionContent}}
       {{#ionList}}
         {{#each cards}}
-          {{#ionItem path="user" buttonRight=true class="item-icon-right"}}
-            <h2>{{username}}</h2>
-            <p>{{title}}</p>
-            {{> ionIcon icon="ios-arrow-forward" class="dark"}}
-          {{/ionItem}}
+          {{#if username}}
+            {{#ionItem path="user" buttonRight=true class="item-icon-right"}}
+              <h2>{{username}}</h2>
+              <p>{{title}}</p>
+              {{> ionIcon icon="ios-arrow-forward" class="dark"}}
+            {{/ionItem}}
+          {{/if}}
         {{/each}}
       {{/ionList}}
     {{/ionContent}}

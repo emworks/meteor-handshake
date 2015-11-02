@@ -6,7 +6,7 @@ Template.app.rendered = function() {
   this.autorun(function() {
     if (!Meteor.user()) return;
     Session.set('updateLocation', Meteor.setInterval(function() {
-      if (!navigator.geolocation) return;
+      if (!navigator.geolocation && !navigator.geolocation.length) return;
       navigator.geolocation.getCurrentPosition(function(position) {
         var loc = [ position.coords.longitude, position.coords.latitude ];
         Meteor.call('updateLocation', loc);

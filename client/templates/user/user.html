@@ -9,7 +9,9 @@
         <h3>{{title}}</h3>
         <p>{{summary}}</p>
         {{#if isPhoneShared}}
-          <p>{{phone}}</p>
+          <p>
+            <a href="tel: {{phone}}">{{phone}}</a>
+          </p>
         {{/if}}
         {{#unless isPhoneSent}}
           <p>
