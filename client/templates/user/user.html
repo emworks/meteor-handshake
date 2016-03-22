@@ -20,6 +20,14 @@
             </button>
           </p>
         {{/unless}}
+        {{#if isDeleted}}
+          Deleted
+        {{/if}}
+        <p>
+          <button id="move-to-trash" class="button button-block button-stable">
+            Delete
+          </button>
+        </p>
       {{/with}}
     {{/ionContent}}
   {{/ionView}}
